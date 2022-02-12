@@ -1,15 +1,19 @@
 {
-  "name": "infinitescroll",
+  "name": "@hellojh/react-native-infinite-scroll",
   "version": "0.0.1",
-  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "publish:npm": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
   },
   "dependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/preset-react": "^7.16.7",
     "react": "17.0.2",
     "react-native": "0.67.2"
   },
@@ -25,5 +29,15 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hellojaehyeok/npm-react-native-infinite-scroll"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   }
 }
