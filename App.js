@@ -1,14 +1,13 @@
 
 
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import InfiniteScroll from './src/lib/infiniteScroll';
+import React, { useCallback, useEffect, useState } from 'react';
+import { StyleSheet, Text, View, useFocusEffect } from 'react-native';
+
 const App = () => {
 
 
   return (
     <View>
-      <InfiniteScroll />
     </View>
   );
 };
