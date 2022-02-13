@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FlatList } from 'react-native';
+import { ScrollView } from 'react-native';
 
-const InfiniteScroll = ({style, data, renderItem, onScrollEnd, endPoint}) => {
+const InfiniteScroll = ({children, onScrollEnd, endPoint}) => {
     
     const [isUpdateList, setIsUpdateList] = useState(true);
 
@@ -17,20 +17,19 @@ const InfiniteScroll = ({style, data, renderItem, onScrollEnd, endPoint}) => {
         if (screenHeight + updateScroll + _endPoint >= documentHeight) {
             if(!isUpdateList){return};
             setIsUpdateList(false);
-
             onScrollEnd();
-            setIsUpdateList(true);
         }
     };
 
+
     return (
-        <FlatList 
+        <ScrollView
             onScroll={onScrollList}
-            style={style}
-            data={data}
-            renderItem={renderItem}
-            keyExtractor={(i,index)=>index}
-        />
+            onContentSizeChange={() => setIsUpdateList(true)}
+            scrollEventThrottle={1}
+        >
+            {children}
+        </ScrollView>
     )
 };
 
