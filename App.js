@@ -1,7 +1,7 @@
 
 
-import React, { useCallback, useEffect, useState } from 'react';
-import { StyleSheet, Text, View, useFocusEffect } from 'react-native';
+import React from 'react';
+import {View} from 'react-native';
 
 const App = () => {
 
@@ -11,8 +11,3 @@ const App = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-});
-
-export default App;
