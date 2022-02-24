@@ -1,5 +1,97 @@
 # npm-react-native-infinite-scroll
 
+It is a library of infinite scrolls and inverse infinite scrolls used by React Native.      
+
+Infinite scrolls are often used when paging, and reverse infinite scrolls are often used when implementing chatting.
+
+If you use it, I'd appreciate it if you could press ⭐ on the GitHub!        
+
+## Installation
+```
+npm i @hellojh/react-native-infinite-scroll
+```
+
+<br /><br />
+
+## Components
+---
+|Component   | Description |
+|------|-----|
+|`<InfiniteScroll></InfiniteScroll>`| Scrolling from top to bottom. |
+|`<R_InfiniteScroll></R_InfiniteScroll>`| Scroll from bottom to top. |
+
+<br /><br />
+
+### InfiniteScroll
+It's a typical infinite scroll.
+
+|props   | Description | Type|
+|------|-----|-----|
+|`endPoint`| "OnScrollEnd" starts when you reach the point of "endPoint" from the floor. | Int |
+|`onScrollEnd`| A function to be executed when the scroll arrives last. | Function |
+   
+<br />
+
+sample code      
+```
+<InfiniteScroll
+    endPoint={100}
+    onScrollEnd={fetchData}
+>
+    {
+        array.map((item, index) => {
+            return(
+                <Text key={index}>{item}</Text>
+            )
+        })
+    }
+</InfiniteScroll>
+```
+
+
+<br /><br />
+
+### R_InfiniteScroll
+It's the opposite of a typical infinite scroll.       
+It detects when the scroll reaches the top and the scroll is facing the bottom at the first rendering.     
+
+|props   | Description | Type|
+|------|-----|-----|
+|`onScrollEnd`| This is a function to be executed when the scroll arrives at the top. | Function |
+   
+<br />
+
+sample code      
+```
+<R_InfiniteScroll
+    onScrollEnd={fetchData}
+>
+    {
+        array.map((item, index) => {
+            return(
+                <Text key={index}>{item}</Text>
+            )
+        })
+    }
+</R_InfiniteScroll>
+```
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+---
+
+
+# npm-react-native-infinite-scroll (Korean)
+
 React Native에서 사용하는 무한스크롤과 역무한스크롤 라이브러리입니다.      
       
 무한스크롤은 페이징 처리할 때 많이 사용하며 역무한스크롤의 경우 채팅을 구현할 때 많이 사용합니다.      
